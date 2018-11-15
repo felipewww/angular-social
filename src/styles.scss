@@ -2,7 +2,11 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
-/*@import "hamburgers-settings"*/
+$hamburger-layer-width         : 20px !default;
+$hamburger-layer-spacing       : 3px !default;
+$hamburger-layer-height        : 2px !default;
+$hamburger-padding-y           : 18px !default;
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 /*@import "hamburgers";*/
 
 :root {
@@ -10,11 +14,15 @@
     --menu-transition: width 0.3s, padding-left 0.1s;
     --menu-width: 275px;
     --padding-default: 15px;
+
+    --smiley-size: 24px;
+    --comment-smiley-size: 16px;
 }
 
 body {
     background-color: #222225;
-
+    color: darkgray !important;
+    font-size: 14px;
 }
 
 header {
@@ -64,3 +72,12 @@ header {
         width: 700px;
     }
 }
+
+form, button, input, select, textarea {
+    outline: none !important;
+}
+
+/*EMOJIS*/
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

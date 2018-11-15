@@ -1,21 +1,317 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div #main id="main" class="menu-hidden">
+    <header>
+        <button #$this (click)="menuAction($this)" class="hamburger hamburger--collapse" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
+    </header>
+
+    <div #menu id="menu">
+        <nav>
+            <div>
+                <a href="#">Feed</a>
+            </div>
+            <div>
+                <a href="#">Wiki</a>
+            </div>
+            <div>
+                <a href="#" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="true" aria-controls="collapse-group">
+                    Grupos
+                </a>
+            </div>
+            <div class="submenu">
+                <div id="collapse-group" [ngbCollapse]="isCollapsed">
+                    <div>Natura</div>
+                    <div>Bradesco</div>
+                    <div>Itau</div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div id="content">
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="col-center">
+
+                    <article class="feed-item card">
+                        <div class="col-lg-12">
+                            <div class="feed-img" style="background-image: url(/assets/media/images/1.jpeg)"></div>
+                                <!--<i class="fa fa-ellipsis-h pull-right"></i>-->
+                                <!--<i class="mori pull-right"></i>-->
+                                <mat-icon class="pull-right">more_horiz</mat-icon>
+                            <div class="feed-info">
+                                <a href="#" class="title">O Grupo pertencente</a>
+                                <!--<div class="markers">-->
+                                    <!--<i class="fa fa-ellipsis-h"></i>-->
+                                <!--</div>-->
+                                <div class="datetime">27/08/2018 - 15:32</div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="feed-content">
+                                Letterpress plaid helvetica cardigan snackwave. Church-key pickled trust fund, hot chicken bushwick XOXO cronut. Tumblr cloud bread salvia 90's stumptown, pop-up listicle scenester wolf vegan dreamcatcher raclette. Shoreditch blog hella, echo park VHS small batch synth tacos listicle bushwick adaptogen pop-up biodiesel microdosing. Food truck stumptown austin plaid chicharrones typewriter. Kickstarter you probably haven't heard of them meggings, banh mi cornhole photo booth blue bottle. Blog deep v live-edge snackwave synth vegan.
+                            </div>
+
+                            <div class="likes">
+                                <div class="options">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/006-happy.png">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/001-emoji.png">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/002-thinking.png">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/003-sad.png">
+                                    <img class="react-smiley active" src="../assets/media/images/smiley/004-angry.png">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/005-crying.png">
+                                </div>
+                                <div class="likes_qtty">82 reações</div>
+                            </div>
+                            <div class="comments_qtty">258 comments</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <hr>
+
+                        <div class="comments col-lg-12">
+
+                            <div class="a-comment">
+                                <div class="user-image" style="background-image: url(../assets/media/images/people/pexels-photo-1239291.jpeg)"></div>
+                                <div class="text">
+                                    <div class="markers">
+                                        <mat-icon class="pull-right">more_horiz</mat-icon>
+                                    </div>
+                                    <a href="#" class="user-name">Carol J. Turner</a>
+                                    <div class="comment">
+                                        Gorgeous, for one thing awful user experience, not only iTunes makes it easy in order that Android geek, therefore gorgeous, where MacBook Air is just beautiful, first so-called “iPad killer”, in contrast Android sucks who Jony Ive’s incredible design, so that Steve Jobs was a genius, despite genius, to whom profit whereas Siri is better than TellMe and Google Voice put together so as to profit in the main best design, not enough Android is fragmented, I think profit, particularly user experience sucks, soon iPhone rip-offs.
+                                    </div>
+
+                                    <br>
+                                    <div class="likes comment">
+                                        <div class="options">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/006-happy.png">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/001-emoji.png">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/002-thinking.png">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/003-sad.png">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/004-angry.png">
+                                            <img class="react-smiley active" src="../assets/media/images/smiley/005-crying.png">
+                                        </div>
+                                        <div class="likes_qtty">82 reações</div>
+                                    </div>
+                                    <div class="pull-right answer-actions">
+                                        <a href="#">responder</a> -
+                                        <a href="#">1 resposta</a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="answers">
+
+                                </div>
+
+                            </div>
+
+                            <div class="a-comment">
+                                <div class="user-image" style="background-image: url(../assets/media/images/people/pexels-photo-1222271.jpeg)"></div>
+                                <div class="text">
+                                    <div class="markers">
+                                        <!--<i class="fa fa-ellipsis-h"></i>-->
+                                        <mat-icon class="pull-right">more_horiz</mat-icon>
+                                    </div>
+                                    <a href="#" class="user-name">Jhon Doe</a>
+                                    <div class="comment">This is my mini comment.</div>
+
+                                    <br>
+                                    <div class="likes comment">
+                                        <div class="options">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/006-happy.png">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/001-emoji.png">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/002-thinking.png">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/003-sad.png">
+                                            <img class="react-smiley" src="../assets/media/images/smiley/004-angry.png">
+                                            <img class="react-smiley active" src="../assets/media/images/smiley/005-crying.png">
+                                        </div>
+                                        <div class="likes_qtty">82 reações</div>
+                                    </div>
+                                    <div class="pull-right answer-actions">
+                                        <a href="#">responder</a> -
+                                        <a href="#">2 respostas</a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div class="answers">
+
+                                    <div class="a-answer">
+                                        <div class="user-image" style="background-image: url(../assets/media/images/people/pexels-photo-736716.jpeg)"></div>
+                                        <div class="text">
+                                            <div class="markers">
+                                                <mat-icon class="pull-right">more_horiz</mat-icon>
+                                            </div>
+                                            <a href="#" class="user-name">Mark Allen</a>
+                                            <div class="comment">This is my mini comment.</div>
+
+                                            <br>
+                                            <div class="likes comment">
+                                                <div class="options">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/006-happy.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/001-emoji.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/002-thinking.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/003-sad.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/004-angry.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/005-crying.png">
+                                                </div>
+                                                <div class="likes_qtty">82 reações</div>
+                                            </div>
+                                            <!--<a href="#" class="answer">responder</a>-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="a-answer">
+                                        <div class="user-image" style="background-image: url(../assets/media/images/people/pexels-photo-762020.jpeg)"></div>
+                                        <div class="text">
+                                            <div class="markers">
+                                                <mat-icon class="pull-right">more_horiz</mat-icon>
+                                            </div>
+                                            <a href="#" class="user-name">Mia o'connel</a>
+                                            <div class="comment">This is my mini comment.</div>
+
+                                            <br>
+                                            <div class="likes comment">
+                                                <div class="options">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/006-happy.png">
+                                                    <img class="react-smiley active" src="../assets/media/images/smiley/001-emoji.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/002-thinking.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/003-sad.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/004-angry.png">
+                                                    <img class="react-smiley" src="../assets/media/images/smiley/005-crying.png">
+                                                </div>
+                                                <div class="likes_qtty">82 reações</div>
+                                            </div>
+                                            <!--<a href="#" class="answer">responder</a>-->
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="comment-form col-lg-12">
+                            <!--<input class="comment-type" type="text" placeholder="Escreva seu comentário">-->
+                            <textarea class="comment-type" placeholder="Escreva seu comentário"></textarea>
+                            <button mat-icon-button color="primary">
+                                <mat-icon aria-label="Example icon-button with a heart icon">send</mat-icon>
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <ngb-alert [type]="'success'" [dismissible]="false">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </ngb-alert>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="col-center">
+                    <ngb-alert [type]="'success'" [dismissible]="false">
+                        <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                    </ngb-alert>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <ngb-alert [type]="'success'" [dismissible]="false">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </ngb-alert>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <ngb-alert [type]="'success'" [dismissible]="false">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </ngb-alert>
+            </div>
+            <div class="col-lg-4">
+                <ngb-alert [type]="'success'" [dismissible]="false">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </ngb-alert>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <ngb-alert [type]="'success'" [dismissible]="false">
+                            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                        </ngb-alert>
+                    </div>
+                    <div class="col-lg-4">
+                        <ngb-alert [type]="'success'" [dismissible]="false">
+                            <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                        </ngb-alert>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <ngb-alert [type]="'success'" [dismissible]="false">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </ngb-alert>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <ngb-alert [type]="'success'" [dismissible]="false">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </ngb-alert>
+            </div>
+
+            <div class="col-lg-4">
+                <ngb-alert [type]="'warning'" [dismissible]="false">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </ngb-alert>
+            </div>
+
+            <div class="col-lg-4">
+                <ngb-alert [type]="'danger'" [dismissible]="false">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </ngb-alert>
+            </div>
+        </div>
+
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+        <!--<div class="row"><div class="col-lg-4"><ngb-alert [type]="'success'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'warning'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div><div class="col-lg-4"><ngb-alert [type]="'danger'" [dismissible]="false"><strong>Warning!</strong> Better check yourself, you're not looking too good.</ngb-alert></div></div>-->
+
+    </div>
+    <div class="clearfix"></div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
 <router-outlet></router-outlet>
