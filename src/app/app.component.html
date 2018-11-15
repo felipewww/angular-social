@@ -34,19 +34,50 @@
 
         <div class="row">
             <div class="col-lg-8">
-                <div class="col-center">
+
+                <div #centerBox class="col-center">
+
+                    <div class="col-lg-12" style="height: 40px">
+                        <mat-icon class="pull-right" style="cursor: pointer" (click)="switchFeedReadType($event, centerBox)">fullscreen</mat-icon>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div id="new-post" class="card">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div>
+                                    <textarea placeholder="Algum texto aqui..."></textarea>
+                                </div>
+                                <div>
+                                    <mat-button-toggle-group>
+                                        <mat-button-toggle class="np-act" color="primary">
+                                            <img src="/assets/media/images/smiley/008-images.png">
+                                            Imagem
+                                        </mat-button-toggle>
+                                        <mat-button-toggle class="np-act" color="primary">
+                                            <img src="/assets/media/images/smiley/007-video-camera.png">
+                                            Vídeo
+                                        </mat-button-toggle>
+                                        <mat-button-toggle class="np-act" color="primary">
+                                            <img src="/assets/media/images/smiley/010-safe.png">
+                                            Configurações
+                                        </mat-button-toggle>
+                                    </mat-button-toggle-group>
+                                    <button mat-icon-button color="primary" class="pull-right">
+                                        <mat-icon aria-label="Example icon-button with a heart icon">send</mat-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <article class="feed-item card">
                         <div class="col-lg-12">
                             <div class="feed-img" style="background-image: url(/assets/media/images/1.jpeg)"></div>
-                                <!--<i class="fa fa-ellipsis-h pull-right"></i>-->
-                                <!--<i class="mori pull-right"></i>-->
-                                <mat-icon class="pull-right">more_horiz</mat-icon>
+                            <mat-icon class="pull-right">more_horiz</mat-icon>
                             <div class="feed-info">
                                 <a href="#" class="title">O Grupo pertencente</a>
-                                <!--<div class="markers">-->
-                                    <!--<i class="fa fa-ellipsis-h"></i>-->
-                                <!--</div>-->
                                 <div class="datetime">27/08/2018 - 15:32</div>
                             </div>
                             <div class="clearfix"></div>
@@ -69,9 +100,54 @@
                             <div class="clearfix"></div>
                         </div>
 
+
+                        <div class="comments col-lg-12" style="display: none">
+                            <hr>
+                            <!--nothing-->
+                        </div>
+
                         <hr>
 
+                        <div class="comment-form col-lg-12">
+                            <!--<input class="comment-type" type="text" placeholder="Escreva seu comentário">-->
+                            <textarea class="comment-type" placeholder="Escreva seu comentário"></textarea>
+                            <button mat-icon-button color="primary">
+                                <mat-icon aria-label="Example icon-button with a heart icon">send</mat-icon>
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="feed-item card">
+                        <div class="col-lg-12">
+                            <div class="feed-img" style="background-image: url(/assets/media/images/1.jpeg)"></div>
+                                <mat-icon class="pull-right">more_horiz</mat-icon>
+                            <div class="feed-info">
+                                <a href="#" class="title">O Grupo pertencente</a>
+                                <div class="datetime">27/08/2018 - 15:32</div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="feed-content">
+                                Letterpress plaid helvetica cardigan snackwave. Church-key pickled trust fund, hot chicken bushwick XOXO cronut. Tumblr cloud bread salvia 90's stumptown, pop-up listicle scenester wolf vegan dreamcatcher raclette. Shoreditch blog hella, echo park VHS small batch synth tacos listicle bushwick adaptogen pop-up biodiesel microdosing. Food truck stumptown austin plaid chicharrones typewriter. Kickstarter you probably haven't heard of them meggings, banh mi cornhole photo booth blue bottle. Blog deep v live-edge snackwave synth vegan.
+                            </div>
+
+                            <div class="likes">
+                                <div class="options">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/006-happy.png">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/001-emoji.png">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/002-thinking.png">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/003-sad.png">
+                                    <img class="react-smiley active" src="../assets/media/images/smiley/004-angry.png">
+                                    <img class="react-smiley" src="../assets/media/images/smiley/005-crying.png">
+                                </div>
+                                <div class="likes_qtty">82 reações</div>
+                            </div>
+                            <div class="comments_qtty">258 comments</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+
                         <div class="comments col-lg-12">
+                            <hr>
 
                             <div class="a-comment">
                                 <div class="user-image" style="background-image: url(../assets/media/images/people/pexels-photo-1239291.jpeg)"></div>

@@ -35,6 +35,20 @@ export class AppComponent {
         // let likeContainers = document.get
     // }
 
+    switchFeedReadType(e, centerBox){
+
+        let currentType = e.target.innerHTML;
+
+        if ( currentType === 'fullscreen' ) {
+            e.target.innerHTML = 'fullscreen_exit';
+            centerBox.classList.remove('col-center');
+        } else {
+            e.target.innerHTML = 'fullscreen';
+            centerBox.classList.add('col-center');
+        }
+
+    }
+
     menuAction($btn): void {
         // console.log(this);
         // console.log(a);

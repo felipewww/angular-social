@@ -23,6 +23,7 @@
 
 article.feed-item.card {
     padding: 15px 0;
+    margin-bottom: 15px;
 }
 
 .feed-img {
@@ -242,7 +243,7 @@ article.feed-item.card {
     float: left;
 }
 
-.comment-type[_ngcontent-c0] {
+.comment-type {
     width: calc(100% - 40px);
     border: none;
     background: #f3f3f3;
@@ -253,4 +254,27 @@ article.feed-item.card {
     height: 40px;
     overflow: hidden;
     resize: none;
+    font-size: 12px;
+}
+
+/*NEWPOST*/
+#new-post {
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.np-act {
+    /*margin-right: 15px;*/
+}
+
+.np-act img{
+    width: 25px;
+}
+
+#new-post textarea{
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e1e1e1;
 }
