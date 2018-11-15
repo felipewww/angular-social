@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatIconModule, MatButtonToggleModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatButtonToggleModule, MatTooltipModule} from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -20,6 +20,7 @@ import {MatButtonModule, MatIconModule, MatButtonToggleModule} from '@angular/ma
         MatButtonModule,
         MatIconModule,
         MatButtonToggleModule,
+        MatTooltipModule,
         // MatButtonToggleGroup
         // MatChipsModule
     ],

@@ -38,7 +38,16 @@
                 <div #centerBox class="col-center">
 
                     <div class="col-lg-12" style="height: 40px">
-                        <mat-icon class="pull-right" style="cursor: pointer" (click)="switchFeedReadType($event, centerBox)">fullscreen</mat-icon>
+                        <mat-icon
+                            class="pull-right"
+                            style="cursor: pointer"
+                            (click)="switchFeedReadType($event, centerBox)"
+                            (mouseenter)="tooltip.show()"
+                            matTooltip="Expandir/Reduzir visualização dos posts"
+                            aria-label="Button that displays a tooltip when focused or hovered over"
+                        >
+                            fullscreen
+                        </mat-icon>
                     </div>
 
                     <div class="clearfix"></div>
