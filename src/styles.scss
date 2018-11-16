@@ -33,6 +33,14 @@ header {
     z-index: 1;
 }
 
+.card.with-padding {
+    padding: 15px;
+}
+
+.mat-tab-body-content {
+    padding: 15px;
+}
+
 #menu {
     float: left;
     width: var(--menu-width);
