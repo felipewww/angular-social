@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommentViewComponent } from './shared/feed/comment-view/comment-view.component';
 import { CommentFormComponent } from './shared/feed/comment-form/comment-form.component';
 import { ReactionsComponent } from './shared/reactions/reactions.component';
-import {MaterialModule} from './shared/material/material.module';
+import {MaterialModule} from './core/material.module';
 
 import 'hammerjs';
 

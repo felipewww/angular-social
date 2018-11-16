@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FeedCommentModel} from '../../../models/FeedComment.model';
 
 @Component({
     selector: 'app-comment-view',
@@ -8,24 +9,30 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CommentViewComponent implements OnInit {
 
     @Input() type: string;
-    private answers: any[];
+    @Input() comment: FeedCommentModel;
+
+    private userPhoto: string;
 
     constructor() {
-        this.answers = [{}];
     }
 
     ngOnInit() {
+        this.userPhoto = `url(${this.comment.user.photo})`;
     }
 
-    isParent(){
+    isParent() {
         return this.type === 'parent';
     }
 
-    setBoxClass(){
+    setBoxClass(): string{
         if (this.isParent()){
             return 'a-comment';
         } else {
             return 'a-answer';
         }
+    }
+
+    answersText(): string {
+        return ( this.comment.answers.length > 1 ) ? 'respostas' : 'resposta';
     }
 }

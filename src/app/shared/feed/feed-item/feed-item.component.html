@@ -1,25 +1,30 @@
 <article class="feed-item card">
     <div class="col-lg-12">
-        <div class="feed-img" style="background-image: url(/assets/media/images/1.jpeg)"></div>
+        <div class="feed-img" [style.background-image]="bgImage"></div>
         <mat-icon class="pull-right">more_horiz</mat-icon>
         <div class="feed-info">
-            <a href="#" class="title">O Grupo pertencente</a>
-            <div class="datetime">27/08/2018 - 15:32</div>
+            <a href="#" class="title">{{ item.title.text }}</a>
+            <div class="datetime">{{ item.datetime }}</div>
         </div>
         <div class="clearfix"></div>
         <div class="feed-content">
-            Letterpress plaid helvetica cardigan snackwave. Church-key pickled trust fund, hot chicken bushwick XOXO cronut. Tumblr cloud bread salvia 90's stumptown, pop-up listicle scenester wolf vegan dreamcatcher raclette. Shoreditch blog hella, echo park VHS small batch synth tacos listicle bushwick adaptogen pop-up biodiesel microdosing. Food truck stumptown austin plaid chicharrones typewriter. Kickstarter you probably haven't heard of them meggings, banh mi cornhole photo booth blue bottle. Blog deep v live-edge snackwave synth vegan.
+            {{ item.content }}
         </div>
 
-        <app-reactions></app-reactions>
+        <app-reactions [data]="item.reactions"></app-reactions>
 
-        <div class="comments_qtty">258 comments</div>
+        <div class="comments_qtty">{{ item.comments.length }} comments</div>
         <div class="clearfix"></div>
     </div>
 
     <div class="comments col-lg-12">
         <hr>
-        <app-comment-view [type]="'parent'"></app-comment-view>
+
+        <app-comment-view *ngFor="let comment of item.comments"
+            [comment]="comment"
+            [type]="'parent'">
+        </app-comment-view>
+
     </div>
 
     <hr>

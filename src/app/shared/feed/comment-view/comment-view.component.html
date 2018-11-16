@@ -1,26 +1,25 @@
 <div [class]="setBoxClass()">
-    <div class="user-image" style="background-image: url(../assets/media/images/people/pexels-photo-1222271.jpeg)"></div>
+    <div class="user-image" [style.background-image]="userPhoto"></div>
     <div class="text">
         <div class="markers">
-            <!--<i class="fa fa-ellipsis-h"></i>-->
             <mat-icon class="pull-right">more_horiz</mat-icon>
         </div>
-        <a href="#" class="user-name">Jhon Doe</a>
-        <div class="comment">This is my mini comment.</div>
+        <a href="#" class="user-name">{{ comment.user.name }}</a>
+        <div class="comment">{{ comment.comment }}</div>
 
         <br>
 
-        <app-reactions [containerClass]="'a-comment'"></app-reactions>
+        <app-reactions [containerClass]="'a-comment'" [data]="comment.reactions"></app-reactions>
 
         <div *ngIf="isParent()" class="pull-right answer-actions">
-            <a href="#">responder</a> -
-            <a href="#">2 respostas</a>
+            <a href="#">responder</a>
+            <a *ngIf="comment.answers.length > 0" href="#"> - {{ comment.answers.length }} {{ answersText() }}</a>
         </div>
     </div>
     <div class="clearfix"></div>
 
     <div *ngIf="isParent()" class="answers">
-        <app-comment-view [type]="'children'" *ngFor="let answer of answers"></app-comment-view>
+        <app-comment-view [type]="'children'" *ngFor="let answer of comment.answers" [comment]="answer"></app-comment-view>
     </div>
 
 </div>

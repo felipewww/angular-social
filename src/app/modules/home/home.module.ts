@@ -5,10 +5,9 @@ import { FeedFormComponent } from '../../shared/feed/feed-form/feed-form.compone
 import { HomeComponent } from './home.component';
 
 import {Routes, RouterModule} from '@angular/router';
-import {MaterialModule} from '../../shared/material/material.module';
+import {MaterialModule} from '../../core/material.module';
 
 import {CommentViewComponent} from '../../shared/feed/comment-view/comment-view.component';
-import {CommentFormComponent} from '../../shared/feed/comment-form/comment-form.component';
 import {ReactionsComponent} from '../../shared/reactions/reactions.component';
 
 const ROUTES: Routes = [
@@ -21,11 +20,9 @@ const ROUTES: Routes = [
         FeedFormComponent,
         HomeComponent,
         CommentViewComponent,
-        // CommentFormComponent,
         ReactionsComponent
     ],
     imports: [
-        // RouterModule,
         RouterModule.forChild(ROUTES),
         CommonModule,
         MaterialModule

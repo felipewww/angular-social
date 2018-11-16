@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, Input, OnInit} from '@angular/core';
+import {FeedItemModel} from '../../../models/FeedItem.model';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './feed-item.component.html',
-  styleUrls: ['./feed-item.component.scss']
+    selector: 'app-feed-item',
+    templateUrl: './feed-item.component.html',
+    styleUrls: ['./feed-item.component.scss']
 })
+
+@Injectable()
 export class FeedItemComponent implements OnInit {
 
-  constructor() { }
+    @Input() item: FeedItemModel;
+    private bgImage: string;
+    constructor() { }
 
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+        this.bgImage = `url(${this.item.image})`;
+    }
 }
