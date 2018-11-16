@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CommentViewComponent } from './shared/comment-view/comment-view.component';
-import { CommentFormComponent } from './shared/comment-form/comment-form.component';
+import { CommentViewComponent } from './shared/feed/comment-view/comment-view.component';
+import { CommentFormComponent } from './shared/feed/comment-form/comment-form.component';
 import { ReactionsComponent } from './shared/reactions/reactions.component';
 import {MaterialModule} from './shared/material/material.module';
 

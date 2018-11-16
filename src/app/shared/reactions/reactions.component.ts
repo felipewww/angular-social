@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-reactions',
-  templateUrl: './reactions.component.html',
-  styleUrls: ['./reactions.component.scss']
+    selector: 'app-reactions',
+    templateUrl: './reactions.component.html',
+    styleUrls: ['./reactions.component.scss']
 })
 export class ReactionsComponent implements OnInit {
 
-  constructor() { }
+    @Input() containerClass: string;
 
-  ngOnInit() {
-  }
+    constructor() { }
+
+    ngOnInit() {
+    }
 
 }

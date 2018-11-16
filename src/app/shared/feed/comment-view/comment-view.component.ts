@@ -11,10 +11,21 @@ export class CommentViewComponent implements OnInit {
     private answers: any[];
 
     constructor() {
-        this.answers = [];
+        this.answers = [{}];
     }
 
     ngOnInit() {
     }
 
+    isParent(){
+        return this.type === 'parent';
+    }
+
+    setBoxClass(){
+        if (this.isParent()){
+            return 'a-comment';
+        } else {
+            return 'a-answer';
+        }
+    }
 }
