@@ -1,0 +1,49 @@
+<div class="row">
+
+    <div class="col-lg-8">
+
+        <div #centerBox class="">
+
+            <div class="col-lg-12" style="height: 40px">
+                <mat-icon
+                    class="pull-right"
+                    style="cursor: pointer"
+                    (click)="switchFeedReadType($event, centerBox)"
+                    matTooltip="Expandir/Reduzir visualização dos posts"
+                    aria-label="Button that displays a tooltip when focused or hovered over"
+                >
+                    fullscreen_exit
+                </mat-icon>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <app-form></app-form>
+
+            <app-item></app-item>
+
+        </div>
+    </div>
+
+    <div class="col-lg-4" style="padding: 0 30px">
+        <div>
+            <mat-tab-group>
+                <mat-tab label="Feed">
+                    <div>
+                        Sidebar FEED content
+                    </div>
+                </mat-tab>
+                <mat-tab label="Wiki">
+                    <div>
+                        Sidebar WIKI content
+                    </div>
+                </mat-tab>
+                <mat-tab label="Mentions">
+                    <div>
+                        Sidebar @Mentions content
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

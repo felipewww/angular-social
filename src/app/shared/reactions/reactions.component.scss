@@ -1,0 +1,136 @@
+/* feed item */
+.react-smiley{
+    width: var(--smiley-size);
+    transition: all 0.2s;
+}
+
+.react-smiley:hover{
+    cursor: pointer;
+    width: calc( var(--smiley-size) + 4px );
+    margin-top: -18px !important;
+    margin-left: -2px;
+}
+
+.likes .options {
+    height: 32px;
+    position: relative;
+    width: calc( (var(--smiley-size) + 6px) * 6 );
+    float: left;
+}
+
+.likes {
+    float: left;
+}
+
+.likes_qtty {
+    float: left;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.likes img {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    opacity: 0.3;
+}
+
+.likes img.active{
+    opacity: 1;
+}
+
+.likes img:nth-child(1){
+    left: 0;
+}
+
+.likes img:nth-child(2){
+    left: calc(var(--smiley-size) + 6px );
+}
+
+.likes img:nth-child(3){
+    left: calc( (var(--smiley-size) + 6px) * 2  );
+}
+
+.likes img:nth-child(4){
+    left: calc( (var(--smiley-size) + 6px) * 3  );
+}
+
+.likes img:nth-child(5){
+    left: calc( (var(--smiley-size) + 6px) * 4  );
+}
+
+.likes img:nth-child(6){
+    left: calc( (var(--smiley-size) + 6px) * 5  );
+}
+
+/* Comments */
+.a-comment .react-smiley{
+    width: var(--comment-smiley-size);
+    transition: all 0.2s;
+}
+
+.a-comment .react-smiley:hover{
+    cursor: pointer;
+    width: calc( var(--comment-smiley-size) + 4px );
+    /*margin-top: calc( (var(--comment-smiley-size) / 2) * -1 )!important; !**!*/
+    margin-top: -14px !important;
+    margin-left: -2px;
+}
+
+.a-comment .likes .options {
+    height: 24px; /*EDIT THIS*/
+    position: relative;
+    width: calc( (var(--comment-smiley-size) + 3px) *6 );
+    float: left;
+}
+
+.a-comment .likes {
+    float: left;
+}
+
+.a-comment .likes_qtty {
+    float: left;
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.a-comment .likes img {
+    position: absolute;
+    top: 50%;
+    margin-top: calc( (var(--comment-smiley-size) / 2) * -1 );
+    /*margin-top: calc( var(--comment-smiley-size) / 2 );*/
+    opacity: 0.3;
+}
+
+.a-comment .likes img.active{
+    opacity: 1;
+}
+
+.a-comment .likes img:nth-child(1){
+    left: 0;
+}
+
+.a-comment .likes img:nth-child(2){
+    left: calc(var(--comment-smiley-size) + 1px );
+}
+
+.a-comment .likes img:nth-child(3){
+    left: calc( (var(--comment-smiley-size) + 1px) * 2  );
+}
+
+.a-comment .likes img:nth-child(4){
+    left: calc( (var(--comment-smiley-size) + 1px) * 3  );
+}
+
+.a-comment .likes img:nth-child(5){
+    left: calc( (var(--comment-smiley-size) + 1px) * 4  );
+}
+
+.a-comment .likes img:nth-child(6){
+    left: calc( (var(--comment-smiley-size) + 1px) * 5  );
+}
+
+.answer-actions {
+    font-size: 12px;
+    margin-top: 2px;
+}

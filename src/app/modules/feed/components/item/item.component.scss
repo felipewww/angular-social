@@ -1,0 +1,52 @@
+article.feed-item.card {
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.feed-img {
+    width: 60px;
+    height: 60px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    overflow: hidden;
+    border-radius: 100px;
+    float: left;
+    margin-right: 15px;
+}
+
+.feed-info {
+    float: left;
+    line-height: 14px;
+}
+.feed-info .datetime {
+    font-size: 12px;
+}
+
+.feed-item .feed-content{
+    padding: 15px 0;
+}
+
+.comments_qtty {
+    float: right;
+    margin-top: 6px;
+    font-size: 13px;
+}
+
+.comment-form button {
+    float: left;
+}
+
+.comment-type {
+    width: calc(100% - 40px);
+    border: none;
+    background: #f3f3f3;
+    padding: 10px 25px;
+    border-radius: 10px;
+    color: #717171;
+    float: left;
+    height: 40px;
+    overflow: hidden;
+    resize: none;
+    font-size: 12px;
+}

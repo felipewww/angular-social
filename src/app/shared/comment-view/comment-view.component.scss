@@ -1,0 +1,49 @@
+
+
+/*COMMENTS*/
+
+.a-comment {
+    margin-bottom: 15px;
+}
+.a-comment .answers-info{
+    /*font-size: 13px;*/
+    /*margin-bottom: 15px;*/
+}
+
+.a-comment .user-image {
+    width: 40px;
+    height: 40px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    overflow: hidden;
+    border-radius: 50px;
+    float: left;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.a-comment .markers {
+    float: right;
+}
+
+.a-comment .text {
+    float: left;
+    padding: 15px;
+    background: #f3f3f3;
+    width: calc(100% - (40px + 15px));
+    border-radius: 0 10px;
+}
+
+/*react SMILEY*/
+
+/*COMMENT ASNWERS*/
+
+.a-answer {
+    padding-left: 55px;
+    margin-top: 15px;
+}
+
+.a-answer .text{
+    border-radius: 0;
+}

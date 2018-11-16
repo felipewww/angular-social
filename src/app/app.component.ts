@@ -22,10 +22,10 @@ export class AppComponent {
     constructor(){
     }
 
-    ngOnInit(){
+    // ngOnInit(){
         // let centralizedContainers = document.getElementsByClassName('col-center');
         // this.setLikeButtons();
-    }
+    // }
 
     // likeThis(e): void{
     //     console.log(e);
@@ -34,20 +34,6 @@ export class AppComponent {
     // setLikeButtons(): void{
         // let likeContainers = document.get
     // }
-
-    switchFeedReadType(e, centerBox){
-
-        let currentType = e.target.innerHTML;
-
-        if ( currentType === 'fullscreen' ) {
-            e.target.innerHTML = 'fullscreen_exit';
-            centerBox.classList.remove('col-center');
-        } else {
-            e.target.innerHTML = 'fullscreen';
-            centerBox.classList.add('col-center');
-        }
-
-    }
 
     menuAction($btn): void {
         // console.log(this);

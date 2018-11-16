@@ -1,0 +1,35 @@
+<article class="feed-item card">
+    <div class="col-lg-12">
+        <div class="feed-img" style="background-image: url(/assets/media/images/1.jpeg)"></div>
+        <mat-icon class="pull-right">more_horiz</mat-icon>
+        <div class="feed-info">
+            <a href="#" class="title">O Grupo pertencente</a>
+            <div class="datetime">27/08/2018 - 15:32</div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="feed-content">
+            Letterpress plaid helvetica cardigan snackwave. Church-key pickled trust fund, hot chicken bushwick XOXO cronut. Tumblr cloud bread salvia 90's stumptown, pop-up listicle scenester wolf vegan dreamcatcher raclette. Shoreditch blog hella, echo park VHS small batch synth tacos listicle bushwick adaptogen pop-up biodiesel microdosing. Food truck stumptown austin plaid chicharrones typewriter. Kickstarter you probably haven't heard of them meggings, banh mi cornhole photo booth blue bottle. Blog deep v live-edge snackwave synth vegan.
+        </div>
+
+        <app-reactions></app-reactions>
+
+        <div class="comments_qtty">258 comments</div>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <div class="comments col-lg-12">
+        <hr>
+        <app-comment-view [type]="'parent'"></app-comment-view>
+    </div>
+
+    <hr>
+
+    <div class="comment-form col-lg-12">
+        <!--<input class="comment-type" type="text" placeholder="Escreva seu comentário">-->
+        <textarea class="comment-type" placeholder="Escreva seu comentário"></textarea>
+        <button mat-icon-button color="primary">
+            <mat-icon aria-label="Example icon-button with a heart icon">send</mat-icon>
+        </button>
+    </div>
+</article>

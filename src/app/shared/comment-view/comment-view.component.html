@@ -1,0 +1,43 @@
+<div class="a-comment">
+    <div class="user-image" style="background-image: url(../assets/media/images/people/pexels-photo-1222271.jpeg)"></div>
+    <div class="text">
+        <div class="markers">
+            <!--<i class="fa fa-ellipsis-h"></i>-->
+            <mat-icon class="pull-right">more_horiz</mat-icon>
+        </div>
+        <a href="#" class="user-name">Jhon Doe</a>
+        <div class="comment">This is my mini comment.</div>
+
+        <br>
+
+        <app-reactions></app-reactions>
+
+        <div class="pull-right answer-actions">
+            <a href="#">responder</a> -
+            <a href="#">2 respostas</a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div *ngIf="type === 'parent'" class="answers">
+
+        <!--<div class="a-answer">-->
+            <!--<div class="user-image" style="background-image: url(../assets/media/images/people/pexels-photo-736716.jpeg)"></div>-->
+            <!--<div class="text">-->
+                <!--<div class="markers">-->
+                    <!--<mat-icon class="pull-right">more_horiz</mat-icon>-->
+                <!--</div>-->
+                <!--<a href="#" class="user-name">Mark Allen</a>-->
+                <!--<div class="comment">This is my mini comment.</div>-->
+
+                <!--<br>-->
+                <!--<app-reactions></app-reactions>-->
+                <!--&lt;!&ndash;<a href="#" class="answer">responder</a>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="clearfix"></div>-->
+        <!--</div>-->
+        <app-comment-view [type]="'children'" *ngFor="let answer of answers"></app-comment-view>
+
+    </div>
+
+</div>
