@@ -9,7 +9,7 @@
 
         <br>
 
-        <app-reactions [containerClass]="'a-comment'" [data]="comment.reactions"></app-reactions>
+        <app-reactions [containerClass]="'a-comment'" [data]="comment.reactions" [parent]="this"></app-reactions>
 
         <div *ngIf="isParent()" class="pull-right answer-actions">
             <a href="#">responder</a>

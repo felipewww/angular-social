@@ -35,4 +35,14 @@ export class CommentViewComponent implements OnInit {
     answersText(): string {
         return ( this.comment.answers.length > 1 ) ? 'respostas' : 'resposta';
     }
+
+    liked(): object {
+        console.log('adicionar like do comentário id: ' + this.comment.id + ' para o usuário logado');
+        return { status: true };
+    }
+
+    unliked(): object {
+        console.log('remover like do comentário id: ' + this.comment.id + ' do usuário logado');
+        return { status: true };
+    }
 }

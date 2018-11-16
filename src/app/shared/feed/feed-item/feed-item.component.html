@@ -11,7 +11,7 @@
             {{ item.content }}
         </div>
 
-        <app-reactions [data]="item.reactions"></app-reactions>
+        <app-reactions [data]="item.reactions" [parent]="this"></app-reactions>
 
         <div class="comments_qtty">{{ item.comments.length }} comments</div>
         <div class="clearfix"></div>

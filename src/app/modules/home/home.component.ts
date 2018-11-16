@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
     fakePosts(): Array<FeedItemModel> {
         let posts = [
             {
+                id: 17,
                 group: { id: 1, name: 'The fake group', icon: '/assets/media/images/3.jpeg' },
                 content: 'Letterpress plaid helvetica cardigan snackwave. Church-key pickled trust fund, hot chicken bushwick XOXO cronut. Tumblr cloud bread salvia 90\'s stumptown, pop-up listicle scenester wolf vegan dreamcatcher raclette. Shoreditch blog hella, echo park VHS small batch synth tacos listicle bushwick adaptogen pop-up biodiesel microdosing. Food truck stumptown austin plaid chicharrones typewriter. Kickstarter you probably haven\'t heard of them meggings, banh mi cornhole photo booth blue bottle. Blog deep v live-edge snackwave synth vegan.',
                 reactions: {
@@ -42,10 +43,12 @@ export class HomeComponent implements OnInit {
                         angry: {},
                         crying: {},
                     },
+                    currentUserReacted: 0,
                     total: 1
                 },
                 comments: [
                     {
+                        id: 4,
                         user: { id: 1, name: 'Jhon Doe', photo: '/assets/media/images/people/pexels-photo-1239291.jpeg' },
                         comment: 'Some fake comment 1...',
                         reactions: {
@@ -57,20 +60,24 @@ export class HomeComponent implements OnInit {
                                 angry: {},
                                 crying: {},
                             },
+                            currentUserReacted: 1,
                             total: 15
                         },
                         answers: [
                             {
+                                id: 5,
                                 user: { id: 1, name: 'Jhon Doe', photo: '/assets/media/images/people/pexels-photo-1239291.jpeg' },
                                 comment: '111111111 Some fake answer...',
                                 reactions: {
                                     smileys: {},
+                                    currentUserReacted: null,
                                     total: 0
                                 }
                             }
                         ]
                     },
                     {
+                        id: 6,
                         user: { id: 1, name: 'Jhon Doe', photo: '/assets/media/images/people/pexels-photo-1239291.jpeg' },
                         comment: 'Comment without answer',
                         reactions: {
@@ -82,6 +89,7 @@ export class HomeComponent implements OnInit {
                                 angry: {},
                                 crying: {},
                             },
+                            currentUserReacted: null,
                             total: 15
                         },
                         answers: []
@@ -92,6 +100,7 @@ export class HomeComponent implements OnInit {
              * OTHER FEED ITEM
              * */
             {
+                id: 30,
                 group: { id: 1, name: 'Group 2', icon: '/assets/media/images/1.jpeg' },
                 content: 'Another little content!',
                 reactions: {
@@ -103,10 +112,12 @@ export class HomeComponent implements OnInit {
                         angry: {},
                         crying: {},
                     },
+                    currentUserReacted: null,
                     total: 3
                 },
                 comments: [
                     {
+                        id: 1,
                         user: { id: 1, name: 'Jhon Doe', photo: '/assets/media/images/people/pexels-photo-1239291.jpeg' },
                         comment: 'Some fake comment 2...',
                         reactions: {
@@ -118,22 +129,27 @@ export class HomeComponent implements OnInit {
                                 angry: {},
                                 crying: {},
                             },
+                            currentUserReacted: null,
                             total: 15
                         },
                         answers: [
                             {
+                                id: 2,
                                 user: { id: 1, name: 'Jhon Doe', photo: '/assets/media/images/people/pexels-photo-762020.jpeg' },
                                 comment: '22222222222222 Some fake answer...',
                                 reactions: {
                                     smileys: {},
+                                    currentUserReacted: null,
                                     total: 3
                                 }
                             },
                             {
+                                id: 3,
                                 user: { id: 1, name: 'Jhon Doe', photo: '/assets/media/images/people/pexels-photo-762020.jpeg' },
                                 comment: 'other fake answer',
                                 reactions: {
                                     smileys: {},
+                                    currentUserReacted: null,
                                     total: 5
                                 }
                             }
@@ -148,7 +164,7 @@ export class HomeComponent implements OnInit {
         for (let post of posts) {
             let link = '#' + post.group.id + '/thegrouptreatnedname';
 
-            let reactions = new ReactionsModel(post.reactions.smileys, post.reactions.total);
+            let reactions = new ReactionsModel(post.reactions.smileys, post.reactions.total, post.reactions.currentUserReacted);
 
             let user = {
                 id: 1,
@@ -164,25 +180,31 @@ export class HomeComponent implements OnInit {
                 for (const answer of commentParent.answers) {
                     answers.push(
                         new FeedCommentModel(
+                            answer.id,
                             answer.comment,
                             { id: answer.user.id, name: answer.user.name, photo: answer.user.photo },
                             null,
-                            new ReactionsModel(answer.reactions.smileys, answer.reactions.total)
+                            new ReactionsModel(answer.reactions.smileys, answer.reactions.total, answer.reactions.currentUserReacted)
                         )
                     );
                 }
 
                 let c = new FeedCommentModel(
+                    commentParent.id,
                     commentParent.comment,
                     { id: commentParent.user.id, name: commentParent.user.name, photo: commentParent.user.photo },
                     answers,
-                    new ReactionsModel(commentParent.reactions.smileys, commentParent.reactions.total)
-                );
+                    new ReactionsModel(
+                        commentParent.reactions.smileys,
+                        commentParent.reactions.total,
+                        commentParent.reactions.currentUserReacted)
+                    );
                 comments.push(c);
             }
 
             arr.push(
                 new FeedItemModel(
+                    post.id,
                     post.group.icon,
                     { link: link, text: post.group.name },
                     post.content,
