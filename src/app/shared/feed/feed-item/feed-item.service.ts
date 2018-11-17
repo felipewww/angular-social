@@ -10,8 +10,7 @@ export class FeedItemService {
 
     constructor() { }
 
-    public switchFeedReadType(e, centerBox): void{
-
+    public switchFeedReadType(e, centerBox): void {
         if ( e.target.innerHTML === 'fullscreen' ) {
             e.target.innerHTML = 'fullscreen_exit';
             centerBox.classList.remove('col-center');

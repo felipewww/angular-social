@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Injectable, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {FeedItemModel} from '../../../models/FeedItem.model';
+import {FeedItemService} from './feed-item.service';
 
 @Component({
     selector: 'app-feed-item',
@@ -16,6 +17,7 @@ export class FeedItemComponent implements OnInit {
     @Input() item: FeedItemModel;
     private bgImage: string;
 
+    // constructor(feedItemService: FeedItemService) { }
     constructor() { }
 
     ngOnInit() {
