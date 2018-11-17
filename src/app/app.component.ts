@@ -10,7 +10,7 @@ import * as $ from 'jquery';
     templateUrl: './app.component.html',
     styleUrls: [
         './app.component.css',
-        // '../assets/justified-gallery/jquery.justified.js'
+        './shared/assets/radar-notify/radar-notify.scss'
     ],
     // scriptUrls:
 })
@@ -24,11 +24,6 @@ export class AppComponent {
     }
 
     menuAction($btn): void {
-        // console.log(this);
-        // console.log(a);
-        // console.log(event);
-        // let btn = event.target;
-
         if ( !this.main.nativeElement.classList.contains('menu-hidden') ) {
             this.main.nativeElement.classList.remove('menu-showing');
             this.main.nativeElement.classList.add('menu-hidden');
