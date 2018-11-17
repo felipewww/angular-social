@@ -10,7 +10,9 @@ import * as $ from 'jquery';
     templateUrl: './app.component.html',
     styleUrls: [
         './app.component.css',
-    ]
+        // '../assets/justified-gallery/jquery.justified.js'
+    ],
+    // scriptUrls:
 })
 
 export class AppComponent {

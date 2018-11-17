@@ -1,13 +1,16 @@
-import {Component, EventEmitter, Injectable, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Injectable, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {FeedItemModel} from '../../../models/FeedItem.model';
 
 @Component({
     selector: 'app-feed-item',
     templateUrl: './feed-item.component.html',
-    styleUrls: ['./feed-item.component.scss']
+    styleUrls: [
+        './feed-item.component.scss',
+        '../../assets/flexbin-master/flexbin.scss',
+    ]
 })
 
-@Injectable()
+// @Injectable()
 export class FeedItemComponent implements OnInit {
 
     @Input() item: FeedItemModel;

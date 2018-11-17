@@ -10,7 +10,10 @@ export class FeedItemModel extends Model {
         public content: string,
         public datetime: Date,
         public reactions: ReactionsModel,
-        public comments: Array<FeedCommentModel>
+        public comments: Array<FeedCommentModel>,
+        public totalComments: number,
+        // public media: Array<{ type: string, src: string }>
+        public media: { total: number, previews: Array<{ type: string, src: string }>}
     ) {
         super();
     }

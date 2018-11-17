@@ -50,3 +50,12 @@ article.feed-item.card {
     resize: none;
     font-size: 12px;
 }
+
+/*GALERIA*/
+
+.gallery  {
+    overflow: hidden;
+    margin-bottom: 15px !important;
+    display: flex;
+    flex-wrap: wrap;
+}

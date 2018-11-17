@@ -11,9 +11,15 @@
             {{ item.content }}
         </div>
 
+        <div class="gallery flexbin">
+            <div *ngFor="let media of item.media.previews">
+                <img [style.width]="" src="{{ media.src }}">
+            </div>
+        </div>
+
         <app-reactions [data]="item.reactions" [parent]="this"></app-reactions>
 
-        <div class="comments_qtty">{{ item.comments.length }} comments</div>
+        <div class="comments_qtty">{{ item.totalComments }} comments</div>
         <div class="clearfix"></div>
     </div>
 
