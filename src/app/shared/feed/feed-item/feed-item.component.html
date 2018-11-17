@@ -12,8 +12,18 @@
         </div>
 
         <div *ngIf="item.media.total" class="gallery flexbin">
-            <div (click)="openSwiper()" *ngFor="let media of item.media.previews">
-                <img [style.width]="" src="{{ media.src }}">
+            <div (click)="openSwiper()" *ngFor="let media of item.media.previews; index as i">
+                <img src="{{ media.showpiece }}">
+                <div *ngIf="media.type === 'video'" class="fake-play">
+                    <div class="triangle"></div>
+                </div>
+
+                <div *ngIf="isLastGalleryItem(i, item.media.previews.length-1) && hasMoreItems()" class="has-more-items">
+                    <div>
+                        + {{ item.media.total - item.media.previews.length }}
+                    </div>
+                </div>
+
             </div>
         </div>
 

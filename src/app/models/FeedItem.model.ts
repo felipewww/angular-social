@@ -13,7 +13,7 @@ export class FeedItemModel extends Model {
         public comments: Array<FeedCommentModel>,
         public totalComments: number,
         // public media: Array<{ type: string, src: string }>
-        public media: { total: number, previews: Array<{ type: string, src: string }>}
+        public media: { total: number, previews: Array<{ type: string, src: string, showpiece: string }>}
     ) {
         super();
     }

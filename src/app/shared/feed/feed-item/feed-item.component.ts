@@ -19,42 +19,13 @@ export class FeedItemComponent implements OnInit {
     @Input() item: FeedItemModel;
     private bgImage: string;
 
-    // @ViewChild('swiperContainer') swiperContainer;
-
-    // constructor(feedItemService: FeedItemService) { }
-    // constructor(public dialogRef: MatDialogRef<SwiperDialogComponent>) { }
     constructor(public dialog: MatDialog) { }
-    // constructor() { }
 
     ngOnInit() {
         this.bgImage = `url(${this.item.image})`;
-
-        // let swiperSlider = new Swiper(this.swiperContainer.nativeElement);
-        // let swiperSlider = new Swiper(this.swiperContainer.nativeElement);
-        // let mySwiper = new Swiper ('.swiper-container', {
-        //     // Optional parameters
-        //     direction: 'vertical',
-        //     loop: true,
-        //
-        //     // If we need pagination
-        //     pagination: {
-        //         el: '.swiper-pagination',
-        //     },
-        //
-        //     // Navigation arrows
-        //     navigation: {
-        //         nextEl: '.swiper-button-next',
-        //         prevEl: '.swiper-button-prev',
-        //     },
-        //
-        //     // And if we need scrollbar
-        //     scrollbar: {
-        //         el: '.swiper-scrollbar',
-        //     },
-        // });
     }
 
-    openSwiper(){
+    openSwiper() {
         const dialogConfig = new MatDialogConfig();
 
         dialogConfig.disableClose = false;
@@ -63,6 +34,14 @@ export class FeedItemComponent implements OnInit {
         // dialogConfig.closeOnNavigation = true;
 
         this.dialog.open(SwiperDialogComponent, dialogConfig);
+    }
+
+    isLastGalleryItem(currentIdx, total) {
+        return currentIdx === total;
+    }
+
+    hasMoreItems() {
+        return this.item.media.total > this.item.media.previews.length;
     }
 
     liked(): object {

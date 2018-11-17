@@ -41,14 +41,14 @@ export class FeedItemService {
                 /* Limitar em 6 fotos, deve sempre trazer numero PAR, 2, 4, 6... */
                 media: {
                     previews: [
-                        // { type: 'image', src: '/assets/media/images/10.jpeg' },
-                        { type: 'image', src: '/assets/media/images/10.jpeg' },
-                        // { type: 'image', src: '/assets/media/images/1.jpeg' },
-                        { type: 'image', src: '/assets/media/images/2.jpeg' },
-                        { type: 'image', src: '/assets/media/images/3.jpeg' },
-                        { type: 'image', src: '/assets/media/images/5.jpeg' },
-                        { type: 'image', src: '/assets/media/images/6.jpeg' },
-                        { type: 'image', src: '/assets/media/images/7.jpeg' },
+                        // { type: 'image', src: '/assets/media/images/10.jpeg', showpiece: '/assets/media/images/10.jpeg' },
+                        { type: 'image', src: '/assets/media/images/10.jpeg', showpiece: '/assets/media/images/10.jpeg' },
+                        // { type: 'image', src: '/assets/media/images/1.jpeg', showpiece:  '/assets/media/images/1.jpeg' },
+                        { type: 'video', src: '/assets/media/videos/1.mp4', showpiece:  '/assets/media/images/2.jpeg' },
+                        { type: 'image', src: '/assets/media/images/3.jpeg', showpiece:  '/assets/media/images/3.jpeg' },
+                        { type: 'image', src: '/assets/media/images/5.jpeg', showpiece:  '/assets/media/images/5.jpeg' },
+                        { type: 'image', src: '/assets/media/images/6.jpeg', showpiece:  '/assets/media/images/6.jpeg' },
+                        { type: 'image', src: '/assets/media/images/7.jpeg', showpiece:  '/assets/media/images/7.jpeg' },
                     ],
                     total: 17
                 },
