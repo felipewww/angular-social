@@ -13,15 +13,21 @@ import { ReactionsComponent } from './shared/reactions/reactions.component';
 import {MaterialModule} from './core/material.module';
 
 import 'hammerjs';
+import {MatDialogModule} from '@angular/material';
+import {SwiperDialogComponent} from './shared/swiper-dialog/swiper-dialog.component';
+// import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material';
+// import { SwiperDialogComponent } from './shared/swiper-dialog/swiper-dialog.component';
 
 @NgModule({
     declarations: [
+        // SwiperDialogComponent,
         AppComponent,
         // CommentViewComponent,
         // CommentFormComponent,
         // ReactionsComponent
     ],
     imports: [
+        MatDialogModule,
         BrowserModule,
         AppRoutingModule,
         NgbModule.forRoot(),
@@ -31,7 +37,9 @@ import 'hammerjs';
     exports: [
         MaterialModule
     ],
-    providers: [],
+    providers: [
+        // { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true} }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

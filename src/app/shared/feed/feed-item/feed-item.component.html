@@ -11,8 +11,8 @@
             {{ item.content }}
         </div>
 
-        <div class="gallery flexbin">
-            <div *ngFor="let media of item.media.previews">
+        <div *ngIf="item.media.total" class="gallery flexbin">
+            <div (click)="openSwiper()" *ngFor="let media of item.media.previews">
                 <img [style.width]="" src="{{ media.src }}">
             </div>
         </div>

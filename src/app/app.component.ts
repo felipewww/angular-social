@@ -20,22 +20,8 @@ export class AppComponent {
     @ViewChild('menu') menu;
     @ViewChild('main') main;
 
-    title = 'social';
-    constructor(){
+    constructor() {
     }
-
-    // ngOnInit(){
-        // let centralizedContainers = document.getElementsByClassName('col-center');
-        // this.setLikeButtons();
-    // }
-
-    // likeThis(e): void{
-    //     console.log(e);
-    //     console.log(e.target);
-    // }
-    // setLikeButtons(): void{
-        // let likeContainers = document.get
-    // }
 
     menuAction($btn): void {
         // console.log(this);

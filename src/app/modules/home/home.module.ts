@@ -9,6 +9,8 @@ import {MaterialModule} from '../../core/material.module';
 
 import {CommentViewComponent} from '../../shared/feed/comment-view/comment-view.component';
 import {ReactionsComponent} from '../../shared/reactions/reactions.component';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule, MatDialogRef} from '@angular/material';
+import {SwiperDialogComponent} from '../../shared/swiper-dialog/swiper-dialog.component';
 
 const ROUTES: Routes = [
     { path: '', component: HomeComponent }
@@ -16,16 +18,24 @@ const ROUTES: Routes = [
 
 @NgModule({
     declarations: [
+        SwiperDialogComponent,
         FeedItemComponent,
         FeedFormComponent,
         HomeComponent,
         CommentViewComponent,
-        ReactionsComponent
+        ReactionsComponent,
     ],
     imports: [
+        MatDialogModule,
         RouterModule.forChild(ROUTES),
         CommonModule,
-        MaterialModule
-    ]
+        MaterialModule,
+    ],
+    entryComponents: [
+        SwiperDialogComponent
+    ],
+    providers: [
+        { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true} }
+    ],
 })
 export class HomeModule { }

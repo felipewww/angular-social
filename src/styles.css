@@ -23,6 +23,7 @@ header {
     width: 100%;
     background: #6dddfd;
     z-index: 1;
+    top: 0;
 }
 
 #menu {
@@ -34,6 +35,7 @@ header {
     position: fixed;
     margin-top: var(--header-height);
     height: calc(100% - var(--header-height));
+    top: 0;
 }
 
 #main.menu-hidden #menu {
