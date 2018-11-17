@@ -223,9 +223,6 @@ export class FeedItemService {
             );
         }
 
-        console.log('fulldata');
-        console.log(arr);
-
         return arr;
         // return posts;
     }

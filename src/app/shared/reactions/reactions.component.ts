@@ -42,12 +42,14 @@ export class ReactionsComponent implements OnInit {
             this.addLike();
 
         } else {
+            console.log('here?');
             this.reactionSelected.classList.remove('active');
             this.removeLike();
 
             if ( idx !== this.data.currentUserHasReacted ) {
                 clicked.classList.add('active');
                 this.reactionSelected = clicked;
+                this.data.currentUserHasReacted = idx;
                 this.addLike();
             }
         }
