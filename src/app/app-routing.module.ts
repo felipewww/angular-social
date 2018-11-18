@@ -4,7 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     { path: '', loadChildren: './modules/home/home.module#HomeModule' },
-    // { path: 'teste', component: CommentFormComponent }
+    { path: 'group', loadChildren: './modules/group/group.module#GroupModule' },
+    { path: 'wiki', loadChildren: './modules/wiki/wiki.module#WikiModule' },
+    { path: 'courses', loadChildren: './modules/courses/courses.module#CoursesModule' },
+    { path: 'store', loadChildren: './modules/store/store.module#StoreModule' },
 ];
 
 @NgModule({
