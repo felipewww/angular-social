@@ -1,0 +1,136 @@
+/*CHAT*/
+div#chat {
+    position: fixed;
+    right: 0;
+    top: var(--header-height);
+    height: calc(100% - var( --header-height));
+    background: #e0dbd1;
+    width: 28%;
+    z-index: 2;
+}
+
+div#chat-message-box {
+    position: absolute;
+    /* bottom: 15px; */
+    width: 100%;
+    bottom: 0;
+    padding: 10px 0;
+    background: #dadacc;
+}
+
+#chat textarea {
+    width: 85%;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 100px;
+    height: 41px;
+    resize: none;
+    color: #969696;
+    float: left;
+    margin-left: 15px;
+}
+
+#chat mat-icon {
+    float: right;
+    margin-right: 15px;
+    margin-top: 8px;
+}
+
+perfect-scrollbar#messages-box {
+    background: #e2e2d7;
+    height: 100%;
+    position: relative;
+    padding: 0 20px;
+    padding-bottom: 125px;
+}
+
+div#pattern {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-size: 100%;
+    opacity: 0.1;
+    position: absolute;
+}
+
+div#chat-settings {
+    background: #2a2b2d;
+    height: 55px;
+}
+
+div#chat-settings mat-icon {
+    margin-top: 13px !important;
+    color: #a39a97;
+    cursor: pointer;
+}
+
+div#chat-window-title span {
+    margin-top: 15px;
+    margin-left: 15px;
+    display: block;
+    float: left;
+}
+
+div#chat-window-title #image {
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    border-radius: 100px;
+    overflow: hidden;
+    border: 2px solid #3d3e40;
+    margin-top: 6px;
+    margin-left: 20px;
+}
+div#chat-window-title {
+    float: left;
+}
+
+@media screen and (max-width: 1440px) {
+    div#chat {
+        max-width: 360px;
+    }
+}
+
+/*chat msg*/
+.a-message {
+    position: relative;
+    z-index: 2;
+    margin-top: 15px;
+}
+
+.a-message .message {
+    background: #fff;
+    float: left;
+    width: calc(85% - 55px);
+    padding: 5px;
+    border-radius: 5px;
+    /*margin-top: 7px;*/
+    color: #5f5f5f;
+}
+
+.a-message .message span{
+    margin-right: 5px;
+}
+
+.a-message .user {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    border-radius: 40px;
+    background-position: center;
+    float: left;
+    margin-right: 15px;
+}
+
+.a-message.me .user {
+    float: right !important;
+    margin-right: 0 !important;
+    margin-left: 15px !important;
+}
+
+.a-message.me .message {
+    float: right !important;
+    background: #d3f9f9 !important;
+}

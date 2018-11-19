@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {PerfectScrollbarComponent} from 'ngx-perfect-scrollbar';
 
 @Component({
     selector: 'app-root',
@@ -10,17 +9,12 @@ import {PerfectScrollbarComponent} from 'ngx-perfect-scrollbar';
     ],
 })
 
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
 
     @ViewChild('menu') menu;
     @ViewChild('main') main;
-    @ViewChild('ps') ps: PerfectScrollbarComponent;
 
     constructor() {
-    }
-
-    ngAfterViewInit() {
-        this.ps.directiveRef.scrollToBottom(0, 0);
     }
 
     menuAction($btn): void {
