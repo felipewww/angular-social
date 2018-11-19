@@ -1,26 +1,26 @@
-import {Component, ViewChild} from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-// import {$} from 'protractor';
-// import { } from 'j'
-import * as $ from 'jquery';
-// import {animate, state, style, transition, trigger} from '@angular/animations';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {PerfectScrollbarComponent} from 'ngx-perfect-scrollbar';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: [
         './app.component.css',
-        './shared/assets/radar-notify/radar-notify.scss'
+        './default/assets/radar-notify/radar-notify.scss',
     ],
-    // scriptUrls:
 })
 
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
     @ViewChild('menu') menu;
     @ViewChild('main') main;
+    @ViewChild('ps') ps: PerfectScrollbarComponent;
 
     constructor() {
+    }
+
+    ngAfterViewInit() {
+        this.ps.directiveRef.scrollToBottom(0, 0);
     }
 
     menuAction($btn): void {

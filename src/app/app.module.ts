@@ -12,6 +12,15 @@ import {MaterialModule} from './core/material.module';
 import 'hammerjs';
 import {MatDialogModule, MatProgressBarModule} from '@angular/material';
 
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+    suppressScrollX: true,
+    wheelPropagation: false
+};
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -24,12 +33,16 @@ import {MatDialogModule, MatProgressBarModule} from '@angular/material';
         NgbModule.forRoot(),
         BrowserAnimationsModule,
         MaterialModule,
+        PerfectScrollbarModule
     ],
     exports: [
         MaterialModule
     ],
     providers: [
-        // { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true} }
+        {
+            provide: PERFECT_SCROLLBAR_CONFIG,
+            useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+        }
     ],
     bootstrap: [AppComponent]
 })
