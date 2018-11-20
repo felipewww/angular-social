@@ -1,0 +1,47 @@
+<header>
+    <div class="pull-left">
+        <button #$this (click)="menuAction($this)" class="hamburger hamburger--collapse is-active" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+        </button>
+    </div>
+    <div class="logo pull-left">
+        <img src="/assets/media/images/fast-banana.png">
+    </div>
+    <div class="profile pull-left">
+        <div class="photo" style="background-image: url(/assets/media/images/people/pexels-photo-736716.jpeg)"></div>
+        <span>Felipe Barreiros | <mat-progress-bar value="40"></mat-progress-bar></span>
+    </div>
+    <div class="pull-right">
+        <div class="menu-icon" matTooltip="Testes Relâmpago">
+            <mat-icon>whatshot</mat-icon>
+        </div>
+        <div class="menu-icon" matTooltip="Notificações">
+            <mat-icon>notifications</mat-icon>
+            <div class="radar-notify">
+                <div class="radar-container">
+                    <span class="icon icon-6"></span>
+                    <span class="ring ring-6"></span>
+                </div>
+            </div>
+        </div>
+        <div class="menu-icon" matTooltip="Chats">
+            <mat-icon>chat</mat-icon>
+            <div class="radar-notify">
+                <div class="radar-container">
+                    <span class="icon icon-6"></span>
+                    <span class="ring ring-6"></span>
+                </div>
+            </div>
+        </div>
+        <div class="menu-icon" matTooltip="Administração">
+            <mat-icon>apps</mat-icon>
+        </div>
+        <div class="menu-icon"
+             matTooltip="Sair">
+            <i class="fas fa-power-off"></i>
+        </div>
+    </div>
+</header>
+<div id="rainbow"></div>

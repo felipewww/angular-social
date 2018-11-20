@@ -1,5 +1,7 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {PerfectScrollbarComponent} from 'ngx-perfect-scrollbar';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {PerfectScrollbarComponent} from 'ngx-perfect-scrollbar'
+import * as $ from 'jquery';
+import {MatIcon} from '@angular/material';
 
 @Component({
     selector: 'app-chat',
@@ -9,6 +11,8 @@ import {PerfectScrollbarComponent} from 'ngx-perfect-scrollbar';
 export class ChatComponent implements OnInit, AfterViewInit {
 
     @ViewChild('ps') ps: PerfectScrollbarComponent;
+    @ViewChild('screen') screen: ElementRef;
+    @ViewChild('close') close: MatIcon;
 
     constructor() { }
 
@@ -17,5 +21,12 @@ export class ChatComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() {
         this.ps.directiveRef.scrollToBottom(0, 0);
+
+        console.log(this.close._elementRef.nativeElement)
+
+        $(this.close._elementRef.nativeElement).on('click', () => {
+            const screen = this.screen.nativeElement;
+            $(screen).animate({ right: (screen.clientWidth * -1) });
+        });
     }
 }
