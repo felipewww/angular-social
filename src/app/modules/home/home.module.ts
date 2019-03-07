@@ -11,6 +11,9 @@ import {CommentViewComponent} from '../../shared/feed/comment-view/comment-view.
 import {ReactionsComponent} from '../../shared/reactions/reactions.component';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule, MatDialogRef} from '@angular/material';
 import {SwiperDialogComponent} from '../../shared/swiper-dialog/swiper-dialog.component';
+// import {CoreModule} from '../../core/core.module';
+import {CoreModule} from '../../core/core.module';
+// import {SocketPrivateChatService} from '../../socket-private-chat.service';
 
 const ROUTES: Routes = [
     { path: '', component: HomeComponent }
@@ -30,12 +33,18 @@ const ROUTES: Routes = [
         RouterModule.forChild(ROUTES),
         CommonModule,
         MaterialModule,
+        // CoreModule.forRoot('paramStrTeste')
+        CoreModule
     ],
     entryComponents: [
         SwiperDialogComponent
     ],
     providers: [
-        { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true} }
+        { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true} },
+        // SocketPrivateChatService
     ],
 })
-export class HomeModule { }
+export class HomeModule {
+    constructor() {
+    }
+}

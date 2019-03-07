@@ -18,6 +18,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { ChatComponent } from './default/chat/chat.component';
 import { HeaderComponent } from './default/header/header.component';
 import { MenuComponent } from './default/menu/menu.component';
+// import {CoreModule} from './core/core.module';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     suppressScrollX: true,
@@ -39,16 +40,18 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         NgbModule.forRoot(),
         BrowserAnimationsModule,
         MaterialModule,
-        PerfectScrollbarModule
+        PerfectScrollbarModule,
+        // CoreModule
     ],
     exports: [
-        MaterialModule
+        MaterialModule,
+        // CoreModule
     ],
     providers: [
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-        }
+        },
     ],
     bootstrap: [AppComponent]
 })

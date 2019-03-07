@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Injectable, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FeedItemModel} from '../../../models/FeedItem.model';
 
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material';
 import {SwiperDialogComponent} from '../../swiper-dialog/swiper-dialog.component';
+import {SocketPrivateChatService} from '../../../socket-private-chat.service';
 
 @Component({
     selector: 'app-feed-item',
@@ -10,19 +11,26 @@ import {SwiperDialogComponent} from '../../swiper-dialog/swiper-dialog.component
     styleUrls: [
         './feed-item.component.scss',
         '../../assets/flexbin-master/flexbin.scss',
-    ]
+    ],
+    // providers: [SocketPrivateChatService]
 })
 
-@Injectable()
+// @Injectable()
 export class FeedItemComponent implements OnInit {
 
     @Input() item: FeedItemModel;
     private bgImage: string;
 
-    constructor(public dialog: MatDialog) { }
+    constructor(
+        public dialog: MatDialog,
+        public socketPrivateChatService: SocketPrivateChatService
+    ) { }
 
     ngOnInit() {
         this.bgImage = `url(${this.item.image})`;
+
+        console.log('\n feed item loaded');
+        console.log(this.socketPrivateChatService);
     }
 
     openSwiper() {
@@ -31,7 +39,6 @@ export class FeedItemComponent implements OnInit {
         dialogConfig.disableClose = false;
         dialogConfig.autoFocus = true;
         dialogConfig.data = this.item.media;
-        // dialogConfig.closeOnNavigation = true;
 
         this.dialog.open(SwiperDialogComponent, dialogConfig);
     }
